@@ -28,7 +28,16 @@ $(document).ready(function () {
 
 
 //EVENT
-
+    var numQuestion = 1;
+    
+    $('#commencer').on('click', function (event) {
+        $('#commencer').hide();
+        $('#jeuFrame').show();
+        getAjax(numQuestion);
+    });
+    
+    
+    
     $('#source').click(function (event) {
         $('#source').addClass('questionFrame');
         $('#source').removeClass('boutonFrame');
@@ -59,13 +68,19 @@ $(document).ready(function () {
 
 
     $('#precedente').click(function (event) {
-        console.log('precedente');
-
+        
+        numQuestion = numQuestion - 1;
+        numQuestion = concatNum(numQuestion);
+        checkCSSbutton(numQuestion);
+        getAjax(numQuestion);
     });
     
     $('#suivante').click(function (event) {
+        numQuestion = numQuestion + 1;
+        numQuestion = concatNum(numQuestion);
+        checkCSSbutton(numQuestion);
+        getAjax(numQuestion);
         
-        console.log('suivante');
     });
     
     $('#valider').click(function (event) {

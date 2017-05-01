@@ -17,7 +17,7 @@
     
 }
 
-.questionFrame{
+.jeuFrame{
     background-color: lightblue;
     border: solid grey 2px;
     border-radius: 3px;
@@ -36,4 +36,12 @@
 
 li{
     list-style: none;
+}
+
+.hidden{
+    display: none;
+}
+
+.show{
+    display: block;
 }
